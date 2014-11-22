@@ -1,0 +1,31 @@
+<section class="view secondary-view bookmark-view">
+    <header>
+        <h2 class="lead">{{ bookmark.url }}</h2>
+        <div class="btn-group actions">
+            <button class="btn btn-default" ng-click="share()" title="Afficher les marques-page sous forme de liste">
+                <span class="glyphicon glyphicon-share-alt"></span>
+            </button>
+            <button class="btn btn-default" ng-click="openOriginal()" title="Afficher les marques-page sous forme de cartes">
+                <span class="glyphicon glyphicon-eye-open"></span>
+            </button>
+        </div>
+    </header>
+    <article>
+        <div class="bookmark-meta">
+            <div class="form-group">
+                <label>URL</label>
+                <input class="form-control" ng-model="bookmark.url">
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                <textarea class="form-control" rows="5" ng-model="bookmark.description"></textarea>
+            </div>
+        </div>
+        <hr/>
+        <div class="bookmark-data">
+            <div class="bookmark-title"><h1>{{ bookmark.title }}</h1></div>
+            <div class="bookmark-content" ng-bind-html="bookmark.content"></div>
+        </div>
+    </article>
+</section>
+

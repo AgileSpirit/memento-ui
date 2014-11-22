@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" lang="fr">
   <head>
     <meta charset="utf-8">
     <title></title>
@@ -13,23 +13,19 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/styles.css">
     <!-- endbuild -->
-      <script type='text/javascript'>
-          function startApp() {
-              angular.bootstrap(document, ['mementoApp']);
-          }
-      </script>
-
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,700,300,400' rel='stylesheet' type='text/css'>
   </head>
-  <body>
+  <body ng-app="mementoApp" ng-controller="MainCtrl">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div id="app">
-        <div ng-view></div>
+    <div id="app-wrapper">
+        <div ng-include src="'views/menu.html'" ng-controller="MenuCtrl"></div>
+        <div id="app-body" ng-view />
     </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -63,37 +59,19 @@
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <!-- endbower -->
-    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-    <script src="bower_components/textAngular/dist/textAngular-sanitize.min.js"></script>
-    <script src="bower_components/textAngular/dist/textAngular.min.js"></script>
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <!-- Controllers -->
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
-        <script src="scripts/controllers/login.js"></script>
-        <script src="scripts/controllers/bookmark-form.js"></script>
-        <script src="scripts/controllers/header.js"></script>
-        <script src="scripts/controllers/error.js"></script>
-        <script src="scripts/controllers/dashboard.js"></script>
-        <script src="scripts/controllers/editor.js"></script>
-        <script src="scripts/controllers/document-editor.js"></script>
-        <!-- Services-->
-        <script src="scripts/services/apiservices.js"></script>
-        <!-- Directives -->
-        <!-- Filters -->
-        <script src="scripts/controllers/dashboard.js"></script>
-        <script src="scripts/controllers/editor.js"></script>
-        <script src="scripts/services/oauthwebinterceptor.js"></script>
-        <!-- endbuild -->
-        <script type="text/javascript">
-        (function() {
-            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-            po.src = 'https://apis.google.com/js/auth:plusone.js?onload=startApp';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-        })();
-        </script>
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <!-- Controllers -->
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/menu.js"></script>
+    <script src="scripts/controllers/bookmarks.js"></script>
+    <!-- Services-->
+    <script src="scripts/services/apiservices.js"></script>
+    <!-- Directives -->
+    <!-- Filters -->
+    <script src="scripts/services/oauthwebinterceptor.js"></script>
+    <!-- endbuild -->
 </body>
 </html>

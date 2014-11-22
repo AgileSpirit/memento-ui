@@ -1,43 +1,38 @@
-<div ng-include="'views/fragments/header.html'"></div>
-
-<div id="page-body" class="container bookmarks-view">
-
-    <!-- ========== -->
-    <!-- Search Bar -->
-    <!-- ========== -->
-
-    <div class="searchbar" role="search">
-        <input type="text" class="form-control"
-               id="filter" placeholder="Enter filter"
-               ng-model="searchQuery"
-               ng-change="search()">
-    </div>
-
-    <!-- ============= -->
-    <!-- Bookmark List -->
-    <!-- ============= -->
-
-    <div class="bookmarks" >
-        <div class="center-block">
-            <ul class="list">
-                <li ng-repeat="bookmark in bookmarks" ng-click="openLink(bookmark.url)" class="bookmark">
-                        <div class="title">
-                            <a href="{{bookmark.url}}">{{bookmark.title}}</a>
-                        </div>
-                        <div class="description">
-                            <p>{{bookmark.description}}</p>
-                        </div>
-                </li>
-            </ul>
+<section class="view primary-view bookmarks-view">
+    <header>
+        <h2 class="lead"></h2>
+        <div class="btn-group actions">
+            <button class="btn btn-default" ng-click="newBookmark()" title="Add a bookmark">
+                <span class="glyphicon glyphicon-plus"></span>
+            </button>
+<!--
+            <button class="btn btn-default" ng-click="sauvegarder()" title="Afficher les marques-page sous forme de liste">
+                <span class="glyphicon glyphicon-list-alt"></span>
+            </button>
+            <button class="btn btn-default" ng-click="previsualiser()" title="Afficher les marques-page sous forme de cartes">
+                <span class="glyphicon glyphicon-eye-open"></span>
+            </button>
+-->
         </div>
-        <div class="text-center">
-            <ul class="pagination">
-                <li ng-class="{disabled: previousPageDisabled()}"><a href="" ng-click="previousPage()">&laquo;</a></li>
-                <li ng-class="{active: ($index + 1) === currentPage}" ng-repeat="i in getPages() track by $index"><a href="" ng-click="changePage({{$index + 1}})">{{$index + 1}}</a></li>
-                <li ng-class="{disabled: nextPageDisabled()}"><a href="" ng-click="nextPage()" ng-disabled="nextPageDisabled()">&raquo;</a></li>
-            </ul>
-            </div>
-    </div>
-</div>
+    </header>
+    <article>
+        <!-- ============= -->
+        <!-- Bookmark List -->
+        <!-- ============= -->
 
-<div ng-include="'views/fragments/footer.html'"></div>
+        <ul class="bookmark-list" >
+            <li ng-repeat="bookmark in bookmarks" class="bookmark-item">
+                <div class="title">
+                    <a ng-href="{{bookmark.url}}">{{bookmark.title}}</a>
+                </div>
+                <div class="description" ng-click="openBookmark({{ bookmark }})">
+                    <p ng-bind-html="bookmark.description"></p>
+                </div>
+            </li>
+        </ul>
+    </article>
+</section>
+
+<div class="view-filter" ng-show="bookmarkDetailsVisible" ng-click="closeBookmarkEditor()"></div>
+
+<div ng-include src="'views/bookmark.html'" ng-show="bookmarkDetailsVisible"></div>
