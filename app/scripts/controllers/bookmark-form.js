@@ -1,54 +1,15 @@
 'use strict';
 
 angular.module('mementoApp')
-  .controller('BookmarkFormCtrl', ['$scope', '$rootScope', '$modalInstance', 'BookmarkService', 'bookmarkId',
-    function ($scope, $rootScope, $modalInstance, bookmarkService, bookmarkId) {
+    .controller('BookmarkFormCtrl', ['$scope', '$rootScope', 'MockServices',
+        function ($scope, $rootScope, services) {
 
-    // Initialize the bookmark object that will be used for wizard (ADDING/EDITION)
-    $scope.bookmark = {};
+            // Initialize the bookmark object that will be used for wizard
+            $scope.newBookmark = {};
 
-    if (bookmarkId) {
-      $scope.bookmark = bookmarkService.get({id: bookmarkId});
-    }
+            $scope.addBookmark = function () {
+                services.createBookmark($scope.newBookmark);
+                console.log('Bookmark added :-)');
+            };
 
-    $scope.saveBookmark = function () {
-      // Retrieve bookmark
-      var bookmark = $scope.bookmark;
-      // Server call
-      if (bookmark.id) {
-        // Merge
-        console.log('Updating bookmark...');
-        bookmarkService.update({id: bookmark.id}, bookmark,
-          function(successResult) {
-            console.log('Bookmark updated');
-            emitRefreshBookmarkListEvent();
-          },
-          function(errorResult) {
-            console.error('An error occurred during updating');
-          });
-      } else {
-        // Persist
-        console.log('Saving bookmark...');
-        bookmarkService.save(bookmark,
-          function(successResult) {
-            console.log('Bookmark saved');
-            emitRefreshBookmarkListEvent();
-          },
-          function(errorResult) {
-            console.error('An error occurred during saving');
-          });
-      }
-
-      // Close the wizard
-      $modalInstance.close();
-    };
-
-    $scope.cancel = function() {
-      $modalInstance.dismiss('cancel');
-    };
-
-    function emitRefreshBookmarkListEvent() {
-      $rootScope.$emit('refreshBookmarkList');
-    }
-
-  }]);
+        }]);

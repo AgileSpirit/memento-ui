@@ -8,7 +8,7 @@
  * Controller of the mementoApp
  */
 angular.module('mementoApp')
-  .controller('LoginCtrl', ['$rootScope', '$scope', '$location', 'ApiServices',
+  .controller('LoginCtrl', ['$rootScope', '$scope', '$location', '$window', 'ApiServices',
         function ($rootScope, $scope, $location, apiServices) {
 
         // signIn

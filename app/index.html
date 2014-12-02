@@ -13,9 +13,10 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/fonts.css">
     <link rel="stylesheet" href="styles/styles.css">
     <!-- endbuild -->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,700,300,400' rel='stylesheet' type='text/css'>
+    <!--<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,700,300,400' rel='stylesheet' type='text/css'>-->
   </head>
   <body ng-app="mementoApp" ng-controller="MainCtrl">
     <!--[if lt IE 7]>
@@ -24,7 +25,7 @@
 
     <!-- Add your site or application content here -->
     <div id="app-wrapper">
-        <div ng-include src="'views/menu.html'" ng-controller="MenuCtrl"></div>
+        <div ng-include src="'views/menu.html'" ng-show="isMenuVisible()"></div>
         <div id="app-body" ng-view />
     </div>
 
@@ -58,6 +59,7 @@
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -66,9 +68,13 @@
     <!-- Controllers -->
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/menu.js"></script>
+    <script src="scripts/controllers/authentication.js"></script>
     <script src="scripts/controllers/bookmarks.js"></script>
+    <script src="scripts/controllers/bookmark-form.js"></script>
+    <script src="scripts/controllers/notes.js"></script>
     <!-- Services-->
     <script src="scripts/services/apiservices.js"></script>
+    <script src="scripts/services/mock-services.js"></script>
     <!-- Directives -->
     <!-- Filters -->
     <script src="scripts/services/oauthwebinterceptor.js"></script>

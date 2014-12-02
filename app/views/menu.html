@@ -1,4 +1,4 @@
-<div id="app-sidebar">
+<div id="app-sidebar" ng-controller="MenuCtrl" >
 
     <header id="app-logo">
         <a href="/"><img ng-src="images/logo.png"> Memento</a>
@@ -14,7 +14,7 @@
         </ul>
         <ul class="nav-bottom">
             <li><a ng-href="/#/settings"><span class="glyphicon glyphicon-cog"></span>Settings</a></li>
-            <li><a ng-href="/#/logout"><span class="glyphicon glyphicon-off"></span>Log out</a></li>
+            <li><a href="" ng-click="logout()"><span class="glyphicon glyphicon-off"></span>Log out</a></li>
         </ul>
     </nav>
 </div>

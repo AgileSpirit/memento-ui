@@ -15,7 +15,8 @@ angular
         'ngResource',
         'ngRoute',
         'ngSanitize',
-        'ngTouch'
+        'ngTouch',
+        'ui.bootstrap'
     ])
     .config(function ($routeProvider, $httpProvider) {
         $routeProvider
@@ -28,8 +29,10 @@ angular
             .when('/editor',    { templateUrl: 'views/editor.html',     controller: 'EditorCtrl' })
             .when('/sandbox',   { templateUrl: 'views/sandbox.html',    controller: 'SandboxCtrl' })
 */
+            .when('/authentication',   { templateUrl: 'views/authentication.html',    controller: 'AuthenticationCtrl' })
             .when('/bookmarks',   { templateUrl: 'views/bookmarks.html',    controller: 'BookmarksCtrl' })
-            .otherwise({ redirectTo: '/bookmarks' });
+            .when('/notes',   { templateUrl: 'views/notes.html',    controller: 'NotesCtrl' })
+            .otherwise({ redirectTo: '/authentication' });
 
         $httpProvider.interceptors.push('OAuthWebInterceptor');
 
