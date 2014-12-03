@@ -1,15 +1,18 @@
 'use strict';
 
 angular.module('mementoApp')
-    .controller('BookmarkFormCtrl', ['$scope', '$rootScope', 'MockServices',
-        function ($scope, $rootScope, services) {
+    .controller('BookmarkFormCtrl', ['$scope', '$rootScope', '$modalInstance', 'MockServices',
+        function ($scope, $rootScope, $modalInstance, services) {
 
             // Initialize the bookmark object that will be used for wizard
-            $scope.newBookmark = {};
+            $scope.bookmark = {};
 
             $scope.addBookmark = function () {
-                services.createBookmark($scope.newBookmark);
-                console.log('Bookmark added :-)');
+                $modalInstance.close($scope.bookmark);
+            };
+
+            $scope.cancel = function () {
+                $modalInstance.dismiss('cancel');
             };
 
         }]);

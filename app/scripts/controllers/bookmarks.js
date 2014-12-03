@@ -8,7 +8,7 @@
  * Controller of the mementoApp
  */
 angular.module('mementoApp')
-    .controller('BookmarksCtrl', ['$scope', '$http', 'MockServices', function ($scope, $http, services) {
+    .controller('BookmarksCtrl', ['$scope', '$http', '$modal', 'MockServices', function ($scope, $http, $modal, services) {
 
         $scope.bookmarks = [];
 
@@ -35,17 +35,16 @@ angular.module('mementoApp')
          */
 
         $scope.newBookmark = function () {
-            $scope.bookmark = {
-                id: null,
-                creationDate: null,
-                modificationDate: null,
-                title: null,
-                content: null,
-                type: 'BOOKMARK',
-                url: null,
-                description: null
-            };
-            $scope.bookmarkDetailsVisible = true;
+            var modalInstance = $modal.open({
+                templateUrl: 'views/bookmark-form.html',
+                controller: 'BookmarkFormCtrl'
+            });
+            modalInstance.result.then(function (bookmark) {
+                services.createBookmark(bookmark);
+                reloadBookmarks();
+            }, function () {
+                console.log('Modal dismissed at: ' + new Date());
+            });
         };
 
         /**
