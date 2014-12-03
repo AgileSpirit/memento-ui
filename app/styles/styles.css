@@ -401,7 +401,19 @@ a:focus {
     height: 2em;
     line-height: 2em;
 }
+.bookmarks-view .bookmark-item .title .quick-actions {
+    display: none;
+    float: right;
+    cursor: pointer;
+}
+.bookmarks-view .bookmark-item:active .title .quick-actions,
+.bookmarks-view .bookmark-item:hover .title .quick-actions,
+.bookmarks-view .bookmark-item:focus .title .quick-actions {
+    display: inline-block;
+}
+
 .bookmarks-view .bookmark-item .description {
+    clear: both;
     cursor: pointer;
 /*    padding-bottom: 20px;*/
 /*    border-bottom: 1px solid #F1F1F1;*/

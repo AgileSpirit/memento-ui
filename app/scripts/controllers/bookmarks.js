@@ -59,6 +59,25 @@ angular.module('mementoApp')
 
         $scope.readBookmark = function (bookmarkId) {
             var bookmark = services.getBookmark(bookmarkId);
+
+            // Retrieve content from Readability API
+            var readabilityApiUrl = 'https://readability.com/api/content/v1/parser';
+            var bookmarkUrl = bookmark.url;
+            var readabilityApiToken = 'aadef94fc0e970862ac00067cf09717d111fa788';
+            var resource = readabilityApiUrl + '?url=' + bookmarkUrl + '&token=' + readabilityApiToken;
+            $http.get(resource).
+                success(function(data, status, headers, config) {
+                    // this callback will be called asynchronously
+                    // when the response is available
+                    bookmark.title = data.title;
+                    bookmark.content = data.content;
+                }).
+                error(function(data, status, headers, config) {
+                    // called asynchronously if an error occurs
+                    // or server returns response with an error status.
+                });
+
+
             $scope.originalBookmark = bookmark;
             $scope.editedBookmark = {
                 id: bookmark.id,

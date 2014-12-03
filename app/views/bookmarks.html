@@ -24,6 +24,9 @@
             <li ng-repeat="bookmark in bookmarks | orderBy:'creationDate':true" class="bookmark-item">
                 <div class="title">
                     <a ng-href="{{bookmark.url}}">{{bookmark.title}}</a>
+                    <div class="quick-actions">
+                        <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+                    </div>
                 </div>
                 <div class="description" ng-click="readBookmark({{ bookmark.id }})">
                     <p ng-bind-html="bookmark.description"></p>

@@ -19,10 +19,10 @@ angular.module('mementoApp')
             id: 1,
             creationDate: new Date(2014, 9, 3),
             modificationDate: null,
-            title: 'Hello World',
+            title: '[OCTO] [Blog] Designer une API REST',
             content: '<p>Lorem ipsum dolor sit amet, cu exerci cetero integre est, qui convenire signiferumque eu. Nam stet utinam molestie eu, te sensibus molestiae prodesset nam, est vero consequat inciderint id. Cibo errem expetenda mei no, ocurreret consectetuer cu vel. Vel et conceptam scriptorem, vis cu quando suscipiantur. Et vel semper posidonium.</p><p>Ius ut utamur feugiat consetetur. Harum virtute conceptam his ea, sea et tibique invidunt. Cu indoctum conclusionemque qui, ad quas saperet eos. Ius sumo aliquam te, errem oratio ea sea.</p><p>Novum persecuti usu cu. Ea nec dolore partem. Sit invidunt salutandi suscipiantur eu. Ad cibo convenire mnesarchum eum, et vocibus indoctum intellegat mea. Sed latine pertinacia ei.</p><p>Cum et molestiae vulputate reformidans. Vel erat scriptorem cu, vis ne antiopam electram. Vero invenire neglegentur cum ei, an tantas exerci pro, ad vim delectus oporteat recusabo. Ne diam salutatus est, mea id aeque gubergren adipiscing, ad per tale munere cotidieque.</p>',
             type: 'BOOKMARK',
-            url: 'http://localhost',
+            url: 'http://blog.octo.com/designer-une-api-rest/',
             description: 'Lorem ipsum dolor sit amet, cu exerci cetero integre est, qui convenire signiferumque eu. Nam stet utinam molestie eu, te sensibus molestiae prodesset nam, est vero consequat inciderint id. Cibo errem expetenda mei no, ocurreret consectetuer cu vel. Vel et conceptam scriptorem, vis cu quando suscipiantur. Et vel semper posidonium.'
         }, {
             id: 2,
@@ -37,19 +37,19 @@ angular.module('mementoApp')
             id: 3,
             creationDate: new Date(2014, 5, 20),
             modificationDate: null,
-            title: 'Lorem ipsum dolor sit amet',
+            title: 'Software Craftsmanship : une culture à transmettre',
             content: '',
             type: 'BOOKMARK',
-            url: 'http://localhost',
+            url: 'http://blog.octo.com/software-craftsmanship-une-culture-a-transmettre/',
             description: 'Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum.'
         }, {
             id: 4,
             creationDate: new Date(2014, 3, 23),
             modificationDate: null,
-            title: 'Lorem ipsum dolor sit amet',
+            title: 'AngularJS pour aujourd’hui et pour demain',
             content: '<p><b>Java</b> est le nom de marque d\'une <a href="/wiki/Technique" title="Technique">technique</a> informatique développée initialement par <a href="/wiki/Sun_Microsystems" title="Sun Microsystems">Sun Microsystems</a> puis par <a href="/wiki/Oracle_(entreprise)" title="Oracle (entreprise)">Oracle</a>&nbsp;: la «&nbsp;<i>technologie Java™</i>&nbsp;».</p><p>Java est utilisé dans une grande variété de <a href="/wiki/Plate-forme_(informatique)" title="Plate-forme (informatique)">plates-formes</a> depuis les <a href="/wiki/Syst%C3%A8me_embarqu%C3%A9" title="Système embarqué">systèmes embarqués</a> et les <a href="/wiki/T%C3%A9l%C3%A9phone_mobile" title="Téléphone mobile">téléphones mobiles</a>, les <a href="/wiki/Ordinateur" title="Ordinateur">ordinateurs</a> individuels, les <a href="/wiki/Serveur_informatique" title="Serveur informatique">serveurs</a>, les applications d\’entreprise, les <a href="/wiki/Superordinateur" title="Superordinateur">superordinateurs</a>, etc.</p>',
             type: 'BOOKMARK',
-            url: 'http://localhost',
+            url: 'http://blog.octo.com/angularjs-pour-aujourdhui-et-pour-demain/',
             description: 'Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum.'
         }, {
             id: 5,

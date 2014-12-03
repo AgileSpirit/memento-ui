@@ -15,6 +15,7 @@ angular.module('mementoApp')
                     console.log('accessToken = ' + $rootScope.accessToken);
                     config.headers['X-Access-Token'] = $rootScope.accessToken;
                     config.headers['Authorization'] = 'Bearer ' + $rootScope.accessToken;
+                    config.headers['Authorization'] = 'Bearer ' + $rootScope.accessToken;
                 }
                 return config;
             }
